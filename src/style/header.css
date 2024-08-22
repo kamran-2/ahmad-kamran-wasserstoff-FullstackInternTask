@@ -1,0 +1,106 @@
+/* Basic Styles */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* Basic Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: Nunito Sans;
+    background-color:#111014;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.search-container{
+    display: flex;
+    justify-content: center;
+}
+.search {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background-color:#201F23;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.search img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.search input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    max-width: 400px;
+    background-color:#201F23
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.currentlocation {
+    display: flex;
+    align-items: center;
+    /* background-color: blue; */
+    /* margin-left: 20px; */
+}
+
+.currentlocation img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.currentlocation h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .search input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .currentlocation {
+        /* background-color: red; */
+        margin-top: 10px
+        
+    }
+   
+}
