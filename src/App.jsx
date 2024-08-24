@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import './app.css'
-import Main from './components/Main'
-function App() {
+import Header from './components/Header';
+import './app.css';
+import { useContext } from 'react';
+import Main from './components/Main';
+import WeatherContext from './context/setcontext'
 
-  return (
-    <section style={{ backgroundColor:'#121114' }}>
-      <Header />
-      <Main />
-    </section>
+function App() {
   
-    
+  return (
+      <section style={{ backgroundColor: '#121114' }}>
+
+        <Header/>
+        <Main />
+      </section>
+
+
+
   )
 }
 

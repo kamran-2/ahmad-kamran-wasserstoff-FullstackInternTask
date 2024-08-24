@@ -62,8 +62,8 @@
 .currentlocation {
     display: flex;
     align-items: center;
-    /* background-color: blue; */
-    /* margin-left: 20px; */
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .currentlocation img {
