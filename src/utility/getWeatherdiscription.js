@@ -23,10 +23,16 @@ const getweatherdiscription = (dailyForecast,measure) => {
        unit: UNITS[measure].humidity,
      },
      {
-       discription: "Direction",
+       discription: "Wind Direction",
        value: WindDirection,
        logo: "publicassets/icons/direction.png",
-       unit: ""
+       unit: "",
+     },
+     {
+       discription: "Wind Speed",
+       value: dailyForecast[0].wind.speed,
+       logo: "publicassets/icons/airspeed.png",
+       unit: UNITS[measure].wind_speed,
      },
    ];
 return weatherdiscription

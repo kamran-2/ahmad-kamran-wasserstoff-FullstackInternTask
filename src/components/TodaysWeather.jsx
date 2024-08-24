@@ -3,6 +3,7 @@ import '../style/todayweather.css'
 import { getDate } from '../utility/getDate.js'
 import getweatherdiscription from '../utility/getWeatherdiscription.js'
 import WeatherContext from '../context/setcontext.js'
+import Loader from './Loader.jsx'
 
 export default function TodaysWeather({ data }) {
 
@@ -10,7 +11,7 @@ export default function TodaysWeather({ data }) {
     const { place, measure, measurementSystem } = useContext(WeatherContext);
 
     if (!currentWeather || !dailyForecast || dailyForecast.length === 0) {
-        return <div>Loading...</div>;
+        return <Loader/>;
     }
 
     const weatherDiscription = getweatherdiscription(dailyForecast,measurementSystem);
