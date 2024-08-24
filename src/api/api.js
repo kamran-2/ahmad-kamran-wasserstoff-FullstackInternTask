@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_KEY = "50j19knn4humhpidsoe7p7w1xn7r1kr871hfl9vh";
+const API_KEY = import.meta.env.VITE_API_KEY
 
 const currentWeather = async (lat, lon,measure) => {
   const options = {
@@ -10,10 +9,10 @@ const currentWeather = async (lat, lon,measure) => {
       lat: lat,
       lon: lon,
       language: "en",
-      units:measure
+      units: measure,
     },
     headers: {
-      "x-rapidapi-key": "8d51b2ac90mshf62c2da71bf57c2p1c5634jsn8d51bd702ab9",
+      "x-rapidapi-key": API_KEY,
       "x-rapidapi-host": "ai-weather-by-meteosource.p.rapidapi.com",
     },
   };
@@ -37,7 +36,7 @@ const getweather = async (endpoint, place,measure) => {
       units: measure,
     },
     headers: {
-      "x-rapidapi-key": "8d51b2ac90mshf62c2da71bf57c2p1c5634jsn8d51bd702ab9",
+      "x-rapidapi-key": API_KEY,
       "x-rapidapi-host": "ai-weather-by-meteosource.p.rapidapi.com",
     },
   };
@@ -53,11 +52,22 @@ const getweather = async (endpoint, place,measure) => {
 
 
 const searchPlaces = async (myplace) => {
-  const URL = `https://www.meteosource.com/api/v1/free/find_places_prefix?text=${myplace}&key=${API_KEY}`;
+  const options = {
+    method: "GET",
+    url: "https://ai-weather-by-meteosource.p.rapidapi.com/find_places_prefix",
+    params: {
+      text: myplace,
+      language: "en",
+    },
+    headers: {
+      "x-rapidapi-key": API_KEY,
+      "x-rapidapi-host": "ai-weather-by-meteosource.p.rapidapi.com",
+    },
+  };
 
   try {
-    const fetchPlace = await axios.get(URL);
-    return fetchPlace.data[0];
+    const response = await axios.request(options);
+    return response.data[0];
   } catch (error) {
     console.error(error);
   }
