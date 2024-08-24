@@ -1,7 +1,5 @@
-/* Basic Styles */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-/* Basic Styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -40,6 +38,9 @@
 }
 
 .search img {
+    background-color: #434343;
+    padding: 2px;
+    border-radius: 50%;
     height: 30px;
     margin-right: 10px;
 }
@@ -75,7 +76,15 @@
     margin: 0;
     font-size: 18px;
 }
-
+.measurebtn{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: none;
+    color: aliceblue;
+    background-color: #201F23;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
     .header {
@@ -98,9 +107,7 @@
     }
 
     .currentlocation {
-        /* background-color: red; */
         margin-top: 10px
-        
     }
    
 }

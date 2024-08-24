@@ -3,5 +3,4 @@ const getClimate = (str)=>{
     const returnStr = newstr.charAt(0).toUpperCase() + newstr.slice(1);
     return returnStr;
 }
-
 export default getClimate;
