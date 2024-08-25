@@ -5,7 +5,11 @@ import WeatherContext from '../context/setcontext'
 import '../index.css'
 
 export default function Main() {
+
+    // Use the useContext hook to access weather data from WeatherContext
+
     const {currentWeather, dailyForecast} = useContext(WeatherContext);
+    
     return (
         <section className='main'>
             <TodaysWeather data={{currentWeather, dailyForecast}} />

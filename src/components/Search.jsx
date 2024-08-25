@@ -1,13 +1,16 @@
 import React, { useState, useContext } from 'react'
-import '../style/header.css'
 import WeatherContext from '../context/setcontext'
 import { searchPlaces } from '../api/api'
-import searchicon from '../assets//icons/searchicon.png'
+import { searchicon } from '../utility/getIcons'
+import '../style/header.css'
+
 export default function Search() {
   const [location, setLocation] = useState('');
 
   const { setPlace } = useContext(WeatherContext)
 
+  // Handle Search function set the the input value to searchPlaces to get the location from the api call and setPlace 
+  
   const HandleSearch = async () => {
     const searchedPlace = await searchPlaces(location);
 

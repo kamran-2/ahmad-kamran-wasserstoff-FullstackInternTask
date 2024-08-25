@@ -1,5 +1,6 @@
+// Function to format a date into a readable string
 const getDate = (data) => {
-  const date = new Date(data);
+  const date = new Date(data); // Create a Date object from the input string or timestamp
   const months = [
     "Jan",
     "Feb",
@@ -13,17 +14,20 @@ const getDate = (data) => {
     "Oct",
     "Nov",
     "Dec",
-  ];
+  ]; // Array of month abbreviations
 
+  const day = date.getDate(); // Get the day of the month (1-31)
+  const month = date.getMonth(); // Get the month (0-11, hence no need for +1)
+  const year = date.getFullYear(); // Get the year (e.g., 2024)
 
-  const day = date.getDate();
-  const month = date.getMonth() + 1; // Months are 0-indexed in JavaScript
-  const year = date.getFullYear();
+  // Format the date into a string: "day month year"
   const date_obj = `${day} ${months[month]} ${year}`;
-  return date_obj
+
+  return date_obj; // Return the formatted date string
 };
 
-const getDay = (i)=>{
+// Function to get the name of the day of the week based on index
+const getDay = (i) => {
   const days = [
     "Sunday",
     "Monday",
@@ -32,8 +36,10 @@ const getDay = (i)=>{
     "Thursday",
     "Friday",
     "Saturday",
-  ];
+  ]; // Array of day names
 
-  return days[i];
-}
-export { getDate,getDay };
+  return days[i]; // Return the day name corresponding to the index
+};
+
+// Export both functions for use in other modules
+export { getDate, getDay };

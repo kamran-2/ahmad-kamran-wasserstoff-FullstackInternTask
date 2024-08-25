@@ -6,7 +6,6 @@ function App() {
   
   return (
       <section style={{ backgroundColor: '#121114' }}>
-
         <Header/>
         <Main />
       </section>

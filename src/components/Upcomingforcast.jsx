@@ -6,7 +6,12 @@ import '../style/upcomingforcast.css'
 import { useContext } from 'react';
 
 export default function Upcomingforcast({ data }) {
+    // Destructure dailyForecast from the data prop
+
     const {dailyForecast } = data;
+    
+    // Destructure place and measure from WeatherContext
+
     const {place, measure } = useContext(WeatherContext)
 
     return (

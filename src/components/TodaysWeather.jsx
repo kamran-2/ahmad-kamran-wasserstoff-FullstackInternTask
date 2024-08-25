@@ -7,14 +7,26 @@ import Loader from './Loader.jsx'
 
 export default function TodaysWeather({ data }) {
 
-    const {currentWeather, dailyForecast} = data;
+    // Destructure data object to get currentWeather and dailyForecast
+
+    const { currentWeather, dailyForecast } = data;
+
+    // Destructure place, measure, and measurementSystem from WeatherContext
+
     const { place, measure, measurementSystem } = useContext(WeatherContext);
 
+    // Check if currentWeather or dailyForecast is missing or if dailyForecast is empty
+
     if (!currentWeather || !dailyForecast || dailyForecast.length === 0) {
-        return <Loader/>;
+        return <Loader />;
     }
 
-    const weatherDiscription = getweatherdiscription(dailyForecast,measurementSystem);
+    // Get weather description for the day using the provided utility function
+
+    const weatherDiscription = getweatherdiscription(dailyForecast, measurementSystem);
+
+    // Get today's date from the dailyForecast data with month name
+
     const Todaysdate = getDate(dailyForecast[0].day);
 
     return (
@@ -29,11 +41,11 @@ export default function TodaysWeather({ data }) {
                 <h3>{Todaysdate}</h3>
                 <h3>{place.name}</h3>
             </div>
-         
+
             <div className="current-weather-descriptions">
                 {
-                    weatherDiscription.map(({ discription, value, logo,unit }, index) => {
-                        return(
+                    weatherDiscription.map(({ discription, value, logo, unit }, index) => {
+                        return (
                             <div className="current-weather-description" key={index}>
                                 <div className='current-weather-description-header'><p>{discription}</p></div>
                                 <div className='current-weather-description-body'>
@@ -42,10 +54,10 @@ export default function TodaysWeather({ data }) {
                                 </div>
                             </div>
                         )
-                       
+
                     })
                 }
-                
+
             </div>
         </div>
     )

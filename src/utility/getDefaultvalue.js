@@ -1,26 +1,32 @@
-import { currentWeather } from "../api/api";
+import { currentWeather } from "../api/api"; // Import the function to fetch current weather data
 
+// Function to get the user's current location
 async function getCurrentLocation() {
   return new Promise((resolve, reject) => {
+    // Check if geolocation is available in the browser
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
+        // Success callback: resolve with latitude and longitude
         (position) => {
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          resolve({ lat, lon });
+          const lat = position.coords.latitude; // Get latitude
+          const lon = position.coords.longitude; // Get longitude
+          resolve({ lat, lon }); // Resolve the promise with coordinates
         },
+        // Error callback: handle the error and reject the promise
         (error) => {
-          showError(error);
-          reject(error);
+          showError(error); // Display error message
+          reject(error); // Reject the promise with the error
         }
       );
     } else {
+      // Geolocation is not supported
       alert("Geolocation is not supported by this browser.");
-      reject(new Error("Geolocation not supported"));
+      reject(new Error("Geolocation not supported")); // Reject the promise
     }
   });
 }
 
+// Function to display an error message based on the geolocation error code
 function showError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -38,15 +44,16 @@ function showError(error) {
   }
 }
 
+// Function to get the default location and fetch weather data for it
 async function getDefaultLocation() {
   try {
-    const coordinates = await getCurrentLocation();
-    const weatherData = await currentWeather(coordinates.lat, coordinates.lon);
-    return weatherData;
+    const coordinates = await getCurrentLocation(); // Get current location
+    const weatherData = await currentWeather(coordinates.lat, coordinates.lon); // Fetch weather data using coordinates
+    return weatherData; // Return the weather data
   } catch (error) {
-    console.error("Error getting location:", error);
-    return null;
+    console.error("Error getting location:", error); // Log any errors
+    return null; // Return null in case of error
   }
 }
 
-export { getDefaultLocation };
+export { getDefaultLocation }; // Export the function for use in other modules
