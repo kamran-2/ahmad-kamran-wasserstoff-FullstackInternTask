@@ -10,7 +10,7 @@ export default function Search() {
   const { setPlace } = useContext(WeatherContext)
 
   // Handle Search function set the the input value to searchPlaces to get the location from the api call and setPlace 
-  
+
   const HandleSearch = async () => {
     const searchedPlace = await searchPlaces(location);
 
@@ -19,8 +19,8 @@ export default function Search() {
   return (
     <div className='search-container'>
       <div className="search">
-        <img src={searchicon} onClick={HandleSearch} />
         <input type="text" placeholder='Enter your city' onChange={(e) => setLocation(e.target.value)} />
+        <img src={searchicon} onClick={HandleSearch} />
       </div>
     </div>)
 }
