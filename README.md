@@ -50,4 +50,4 @@ VITE_API_KEY = SET YOUR API KEY
 
 
 ## Demo
-[External Documentation](https://thundering.netlify.app/)
+[https://thundering.netlify.app/](https://thundering.netlify.app/)
