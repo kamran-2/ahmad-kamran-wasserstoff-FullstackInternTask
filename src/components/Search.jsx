@@ -20,7 +20,7 @@ export default function Search() {
     <div className='search-container'>
       <div className="search">
         <input type="text" placeholder='Enter your city' onChange={(e) => setLocation(e.target.value)} />
-        <img src={searchicon} onClick={HandleSearch} />
+        <img src={searchicon} onClick={HandleSearch} />                                  
       </div>
     </div>)
 }

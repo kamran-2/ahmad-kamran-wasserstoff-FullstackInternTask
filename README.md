@@ -1,5 +1,5 @@
 
-# Weather App
+# Weather Forecast Dashboard
 
 In this project, I have created a weather app using HTML, CSS, ReactJS and the Meteosource Weather API.
 ## Description

@@ -36,7 +36,6 @@ export default function Header() {
     const Handlemeasure = () => {
         setSelection((prevSelected) => {
             const newSelected = !prevSelected;
-            console.log("Selected:", newSelected);
             if (newSelected) {
                 setMeasurementSystem('us');
                 setMeasure('°F');
@@ -80,7 +79,7 @@ export default function Header() {
             <div className='header-icons'>
                 <div>
                     <div className="measurebtn" style={clicked ? { backgroundColor: "#434343" } : { backgroundColor: "" }} onClick={Handlemeasure}>
-                        <img src={measure == 'C' ? celsius : fahrenheit} alt='logo' />
+                        <img src={measure == '°C' ? celsius : fahrenheit} alt='logo' />
                     </div>
                 </div>
                 <div className="currentlocation" style={clicked ? { backgroundColor: "#434343" } : { backgroundColor: "" }} onClick={currentLocationWeather}>
