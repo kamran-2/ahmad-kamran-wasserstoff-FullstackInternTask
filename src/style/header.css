@@ -1,113 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    font-family: Nunito Sans;
-    background-color:#111014;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Nunito Sans;
+  background-color: #111014;
+  color: white;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    height: 40px;
-    margin-right: 10px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .logo h1 {
-    font-size: 24px;
-    margin: 0;
+  font-size: 24px;
+  margin: 0;
 }
-.search-container{
-    display: flex;
-    justify-content: center;
+.search-container {
+  display: flex;
+  justify-content: center;
 }
 .search {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    background-color:#201F23;
-    border-radius: 30px;
-    padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  background-color: #201f23;
+  border-radius: 30px;
+  padding: 5px;
 }
 
 .search img {
-    background-color: #434343;
-    padding: 2px;
-    border-radius: 50%;
-    height: 30px;
-    margin-right: 10px;
+  background-color: #434343;
+  padding: 2px;
+  border-radius: 50%;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .search input {
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    color: white;
-    max-width: 400px;
-    background-color:#201F23
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  color: white;
+  max-width: 400px;
+  background-color: #201f23;
 }
 
 .search input:focus {
-    outline: none;
+  outline: none;
 }
 
 .currentlocation {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .currentlocation img {
-    height: 20px;
-    margin-right: 10px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 .currentlocation h3 {
-    margin: 0;
-    font-size: 18px;
+  margin: 0;
+  font-size: 18px;
 }
-.measurebtn{
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    border: none;
-    color: aliceblue;
-    background-color: #201F23;
+.measurebtn {
+  height: 20px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 20px;
+  text-align: center;
+  border: none;
+  color: aliceblue;
+  background-color: #434343;
+  transition: background-color 0.3s, transform 0.2s;
 }
+.measurebtn img{
+    height: 100%;
+}
+
+.measurebtn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+.header-icons {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+}
+.float-icons,.location-logo{
+  display: none;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-icons{
+    display: none;
+  }
 
-    .logo h1 {
-        font-size: 20px;
-    }
+  .logo h1 {
+    font-size: 20px;
+  }
 
-    .search {
-        width: 100%;
-        margin: 10px 0;
-    }
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    .search input {
-        width: 100%;
-        max-width: none;
-    }
+  .search input {
+    width: 100%;
+    max-width: none;
+  }
+  
 
-    .currentlocation {
-        margin-top: 10px
-    }
-   
+  
+  .float-icons {
+    position: fixed;
+    display: flex;
+    height: 100px;
+    width: 50px;
+    flex-direction: column;
+    margin: 0;
+    width: 40px;
+    bottom: 50px;
+    right: 20px;
+  }
+  
+.float-icon{
+    height: 30px;
+    width: 30px;
+    top: 0;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #434343;
+}
+.float-icon img{
+    height: 100%;
+}
+.location-logo{
+    position:fixed;
+    display: block;
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    bottom: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #434343;
+}
+.location-logo img{
+    height: 100%;
+}
 }

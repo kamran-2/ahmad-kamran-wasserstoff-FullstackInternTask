@@ -52,11 +52,18 @@ const getweather = async (endpoint, place,measure) => {
 
 
 const searchPlaces = async (myplace) => {
+  const Location = '';
+  if(myplace){
+    Location = myplace
+  }
+  else{
+    Location = "London"
+  }
   const options = {
     method: "GET",
     url: "https://ai-weather-by-meteosource.p.rapidapi.com/find_places_prefix",
     params: {
-      text: myplace,
+      text: Location,
       language: "en",
     },
     headers: {
